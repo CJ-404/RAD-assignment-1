@@ -57,7 +57,6 @@ function start() {
     score1Tag.innerHTML = "SCORE : 0";
     score2Tag.innerHTML = "SCORE : 0";
     winTag.classList.add("hidden");
-    welcomeTag.classList.remove("hidden");
     closeTag.addEventListener("click", close_rules);
     rulesTag.addEventListener("click", show_rules);
     startTag.addEventListener("click", start_roll);
