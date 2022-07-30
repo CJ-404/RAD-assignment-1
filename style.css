@@ -260,6 +260,7 @@ p {
 .win {
     font-size: 50px;
     position: absolute;
+    top: 30px;
     width: 800px;
     height: 200px;
     border-radius: 10px;

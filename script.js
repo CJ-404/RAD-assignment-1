@@ -1,8 +1,6 @@
 let score1 = 0;
 let score2 = 0;
 let first = 1;
-let chanceToPlayer1 = 0;
-let chanceToPlayer2 = 0;
 let welcomeTag = document.querySelector(".welcome");
 let closeTag = document.querySelector(".close");
 let rulesTag = document.querySelector(".rules");
@@ -27,7 +25,6 @@ function show_rules() {
 }
 
 function start_roll() {
-    chanceToPlayer1 = 1;
     startTag.innerHTML = "NEW GAME"
     rollTag1.classList.remove("hidden");
     player2Tag.classList.add("opacity");
@@ -38,8 +35,6 @@ function start_roll() {
 function reset() {
     rollTag1.classList.add("hidden");
     rollTag2.classList.add("hidden");
-    dice1Tag.classList.add("hidden");
-    dice2Tag.classList.add("hidden");
     playernameTag.classList.add("hidden");
     player1Tag.classList.remove("opacity");
     player2Tag.classList.remove("opacity");
@@ -56,6 +51,8 @@ function start() {
     startTag.innerHTML = "START"
     score1Tag.innerHTML = "SCORE : 0";
     score2Tag.innerHTML = "SCORE : 0";
+    dice1Tag.classList.add("hidden");
+    dice2Tag.classList.add("hidden");
     winTag.classList.add("hidden");
     closeTag.addEventListener("click", close_rules);
     rulesTag.addEventListener("click", show_rules);
@@ -86,8 +83,6 @@ function rolling_player1() {
             playernameTag.innerHTML = "player 2 CHANCE";
             score1 = 0;
             score1Tag.innerHTML = "SCORE : " + score1;
-            chanceToPlayer1 = 0;
-            chanceToPlayer2 = 1;
             player1Tag.classList.add("opacity");
             player2Tag.classList.remove("opacity");
             rollTag2.classList.remove("hidden");
@@ -101,8 +96,6 @@ function rolling_player1() {
             playernameTag.innerHTML = "player 2 CHANCE";
             score1 += (dice1 + dice2);
             score1Tag.innerHTML = "SCORE : " + score1;
-            chanceToPlayer1 = 0;
-            chanceToPlayer2 = 1;
             player1Tag.classList.add("opacity");
             player2Tag.classList.remove("opacity");
             rollTag2.classList.remove("hidden");
@@ -132,8 +125,6 @@ function rolling_player2() {
             playernameTag.innerHTML = "player 1 CHANCE";
             score2 = 0;
             score2Tag.innerHTML = "SCORE : " + score2;
-            chanceToPlayer2 = 0;
-            chanceToPlayer1 = 1;
             player2Tag.classList.add("opacity");
             player1Tag.classList.remove("opacity");
             rollTag1.classList.remove("hidden");
@@ -147,8 +138,6 @@ function rolling_player2() {
             playernameTag.innerHTML = "player 1 CHANCE";
             score2 += (dice1 + dice2);
             score2Tag.innerHTML = "SCORE :" + score2;
-            chanceToPlayer2 = 0;
-            chanceToPlayer1 = 1;
             player2Tag.classList.add("opacity");
             player1Tag.classList.remove("opacity");
             rollTag1.classList.remove("hidden");
